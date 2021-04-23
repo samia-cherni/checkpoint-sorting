@@ -1,0 +1,19 @@
+ALGORITHM Insertion_sort
+VAR
+    arr : ARRAY_OF INTEGER[50];
+    i,l,pos,val: INTEGER;
+BEGIN
+    Read(arr);
+    l:=arr.length;
+    FOR i FROM 1 TO l-1 STEP 1 DO
+        val:=arr[i];
+        pos:=i;
+        WHILE (pos>0 AND arr[pos-1]>val)) DO
+            arr[pos]:=arr[pos-1];
+            pos:=pos-1;
+        END_WHILE
+        IF (pos<>i)) THEN
+            arr[pos]:=val;
+        END_IF
+    END_FOR
+END
